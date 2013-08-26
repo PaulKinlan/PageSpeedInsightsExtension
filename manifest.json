@@ -1,5 +1,6 @@
 {
   "name": "PageSpeed Insights Checker",
+  "description": "Checks Mobile PageSpeed score for every page and gives you a handy preview",
   "manifest_version": 2,
   "version": "0.0.0.3",
   "permissions": ["tabs", "https://www.googleapis.com/"],
