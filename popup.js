@@ -10,19 +10,18 @@ chrome.tabs.query({ "currentWindow": true, "active": true }, function(t) {
    var imageresponse = document.getElementById("imageresponse");
    var insights = document.getElementById("insights");
    
-   htmlresponse.innerText = cache.response.pageStats.htmlResponseBytes;
-   cssresponse.innerText = cache.response.pageStats.cssResponseBytes;
-   jsresponse.innerText = cache.response.pageStats.javascriptResponseBytes;
-   imageresponse.innerText = cache.response.pageStats.imageResponseBytes;
+   htmlresponse.innerText = cache.response.pageStats.htmlResponseBytes + " bytes";
+   cssresponse.innerText = cache.response.pageStats.cssResponseBytes + " bytes";
+   jsresponse.innerText = cache.response.pageStats.javascriptResponseBytes + " bytes";
+   imageresponse.innerText = cache.response.pageStats.imageResponseBytes + " bytes";
 
    var results = cache.response.formattedResults.ruleResults;
    for(var i in results) {
      var result = results[i];
      if(result.ruleImpact != 0) {
-       var row = insights.insertRow(-1);
-       var cell1 = row.insertCell(-1);
-       cell1.innerHTML = result.localizedRuleName;  
-       //insights.appendChild();
+       var liEl = document.createElement("li");
+       liEl.innerText = result.localizedRuleName; 
+       insights.appendChild(liEl);
      }
    }
 });
