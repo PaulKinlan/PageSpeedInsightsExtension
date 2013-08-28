@@ -77,7 +77,7 @@ var checkPage = function(tabId) {
 };
 
 var removePage = function(t) {
-  delete imgCache[t];
+  delete cache[t];
 };
 
 chrome.tabs.onActivated.addListener(checkPage);
