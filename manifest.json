@@ -2,8 +2,9 @@
   "name": "PageSpeed Insights Checker",
   "description": "Checks Mobile PageSpeed score for every page and gives you a handy preview",
   "manifest_version": 2,
-  "version": "0.0.0.4",
+  "version": "0.0.0.5",
   "permissions": ["tabs", "https://www.googleapis.com/"],
+  "options_page": "options.html",
   "browser_action": {
     "default_icon": {
       "19": "19.png"

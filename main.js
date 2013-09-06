@@ -17,7 +17,7 @@ function serialize(obj) {
 function buildUrl(url) {
   var fetchUrl = "https://www.googleapis.com/pagespeedonline/v1/runPagespeed";
   var parameters = {
-    key: "AIzaSyDGyUTorf9U60Md_ivRQi7bNlIPugQ3dls",
+    key: localStorage["apikey"] || "AIzaSyDGyUTorf9U60Md_ivRQi7bNlIPugQ3dls",
     strategy: "mobile",
     screenshot: "true",
     rule: ["AvoidLandingPageRedirects", "ServerResponseTime" , "MinimizeRenderBlockingResources", "PrioritizeVisibleContent", "EnableGzipCompression", "InlineRenderBlockingCss", "PreferAsyncResources"],
