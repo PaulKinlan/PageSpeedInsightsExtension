@@ -36,6 +36,7 @@ var checkPage = function(tabId) {
   chrome.tabs.get(tabId, function(t) {
     var url = t.url;
     if(url.substring(0,4) != "http") return;
+    if(tabId in cache && cache[tabId].response.request.url == t.url) return;
 
     var xhr = new XMLHttpRequest();
     xhr.onload = function() {
