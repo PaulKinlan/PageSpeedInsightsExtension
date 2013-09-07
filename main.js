@@ -35,8 +35,11 @@ var checkPage = function(tabId) {
   
   chrome.tabs.get(tabId, function(t) {
     var url = t.url;
+    var hashIndex = url.indexOf("#");
+    if(hashIndex == -1) hashIndex = url.length;
     if(url.substring(0,4) != "http") return;
-    if(tabId in cache && cache[tabId].response.request.url == t.url) return;
+  
+    if(tabId in cache && cache[tabId].response.request.url.substr(0, hashIndex) == url.substr(0, hashIndex)) return;
 
     var xhr = new XMLHttpRequest();
     xhr.onload = function() {
