@@ -11,7 +11,7 @@ chrome.tabs.query({ "currentWindow": true, "active": true }, function(t) {
    var imageresponse = document.getElementById("imageresponse");
    var insights = document.getElementById("insights");
   
-   detailed.href= "https://developers.google.com/speed/pagespeed/insights/?url=" + encodeURIComponent(t[0].id) + "&utm_source=checkerextension";
+   detailed.href= "https://developers.google.com/speed/pagespeed/insights/?url=" + encodeURIComponent(t[0].url) + "&utm_source=checkerextension";
    htmlresponse.innerText = cache.response.pageStats.htmlResponseBytes + " bytes";
    cssresponse.innerText = cache.response.pageStats.cssResponseBytes + " bytes";
    jsresponse.innerText = cache.response.pageStats.javascriptResponseBytes + " bytes";
