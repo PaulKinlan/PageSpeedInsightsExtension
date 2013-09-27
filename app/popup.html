@@ -5,9 +5,19 @@
       h2, h3 { margin-bottom: 5px; }
       table { font-size: 14px; }
       img { box-shadow: 0px 0px 5px #ccc; }
+      #error { display: none; width: 400px; }
+      input { width: 100%; }
     </style> 
   </head>
   <body>
+  <div id="error">
+  <h3>Error</h3>
+    <p>The processing resources for this tool are limited, you can keep using this API by creating an API Key from the <a href="https://developers.google.com/console">Google Developer Dashboard</a> and enabling "Page Speed Insights API".</p>
+    <label for="apikey"><a target=_blank href="https://developers.google.com/console" alt="get an API key">API Key</a></label>
+    <input type=text name=apikey id=apikey  /><button id="save">Save Key</button>
+    <script src="options.js"></script>
+  </div>
+  <div id="results">
   <h3>Page Stats [<a id=detailedinsights target=_blank>Detailed Results</a>]</h3>
   <table>
     <tr><td>HTML Response</td><td id="htmlresponse"></td></tr>
@@ -20,6 +30,7 @@
   <ul id="insights"></ul>
   <h3>Screenshot</h3>
   <img id="output" style="cursor: pointer" />
+  </div>
   <script src="popup.js"> </script>
   </body>
 </html>

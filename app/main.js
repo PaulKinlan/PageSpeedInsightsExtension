@@ -51,6 +51,10 @@ var checkPage = function(tabId) {
         score = "!";
         color = [255, 0, 0, 255];
         html = ""
+        
+        cache[tabId] = {
+          "response": response
+        }
       }
       else {
         score = response.score + "";

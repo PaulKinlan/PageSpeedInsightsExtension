@@ -1,6 +1,19 @@
 var bg = chrome.extension.getBackgroundPage();
 chrome.tabs.query({ "currentWindow": true, "active": true }, function(t) {
    var cache = bg.cache[t[0].id];
+   var resultEl = document.getElementById("results");
+   var errorEl = document.getElementById("error");
+
+   if(!!cache.response.error === true) {
+     errorEl.style.display = "block";
+     resultEl.style.display = "none";
+     return;
+   }
+   else {
+     errorEl.style.display = "none";
+     resultEl.style.display = "block"; 
+   }
+ 
    var imgSrc = cache.screenshot;
    output.src = imgSrc;
    
